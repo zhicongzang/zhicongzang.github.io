@@ -3,9 +3,9 @@
   
     
     <entry>
-      <title><![CDATA[Hello World]]></title>
-      <url>%2F2017%2F04%2F21%2Fhello-world%2F</url>
-      <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+      <title><![CDATA[Hexo + Github Pages 搭建个人博客（一）]]></title>
+      <url>%2F2017%2F04%2F22%2FHexo-Github-Pages-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%80%EF%BC%89%2F</url>
+      <content type="text"><![CDATA[这是一篇有关如何使用Hexo在Github Pages上搭建个人博客的介绍。最近待业在家，闲来无事的时候突发奇想，想给自己弄一个网站。和老婆大人商议后决定自己动手搭建一个属于咱俩的博客，一方面可以记录一起的生活点滴，同时也可以写一些自己研究的东西。本来想自己闭门造车从后台到前端完完整整的把这一整套都弄出来的，但实在是精力有限，况且博客这个东西还是更应该将注意力放在内容上。最后，我还是决定用Hexo在Github Pages上搭建个人博客。闲话不多说，进入正题： Hexo的安装Hexo介绍：Hexo is a fast, simple and powerful blog framework. You write posts in Markdown (or other languages) and Hexo generates static files with a beautiful theme in seconds. 在安装Hexo之前，首先得安装Node.js及Git。 Git的安装 OS 方法 Windows Git下载 Mac $ /usr/bin/ruby -e “$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)”then$ brew install git Linux $ sudo yum install git-coreor$ sudo apt-get install git-core Node.js的安装除了在Node.js官网下载外，还可以通过nvm来安装。 cURL:1$ curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | sh Wget:1$ wget -qO- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | sh 安装完nvm后，重启Terminal运行下面的代码来安装Node.js：1$ nvm install stable npm安装Hexo1$ npm install -g hexo-cli 稍等片刻后，检查下Hexo有没有安装完毕：1$ hexo -v 结果：当看到上面的内容，Hexo就安装成功了。 Hexo的配置及常用指令在Terminal中执行下面的代码：123$ hexo init &lt;folder&gt;$ cd &lt;folder&gt;$ npm install 项目结构如下：12345678.├── _config.yml├── package.json├── scaffolds├── themes └── source ├── _drafts └── _posts 配置在_config.yml中可以修改Hexo的大部分配置，详情见Hexo配置。 常用指令 $ hexo init [folder] 新建网站 $ hexo new [layout] &lt; title &gt; 新建文章 $ hexo generate$ hexo g 生成静态网页 $ hexo publish [layout] &lt; filename &gt; 发布草稿 $ hexo server$ hexo s 启动本地服务器 $ hexo deploy$ hexo d 部署网站 $ hexo migrate &lt; type &gt; 迁移网站 $ hexo clean 清除数据及静态网页 $ hexo render 渲染网站 $ hexo list 资料列表 $ hexo version 版本信息 至此，有关Hexo大致的介绍就差不多了，更多有关Hexo的信息可以参见Hexo文档。 下一篇将介绍如何将网站部署到Github Pages。]]></content>
     </entry>
 
     
