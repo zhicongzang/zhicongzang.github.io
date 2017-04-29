@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[Gwent昆特牌爬坑之旅]]></title>
+      <url>%2F2017%2F04%2F29%2FGwent%E6%98%86%E7%89%B9%E7%89%8C%E7%88%AC%E5%9D%91%E4%B9%8B%E6%97%85%2F</url>
+      <content type="text"><![CDATA[经过了一上午的鏖战，Rank终于上了4700+。先发个图纪念下： 稍后会分享下这些天爬分的心得。]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[Hexo-Github-Pages-搭建个人博客（二）]]></title>
       <url>%2F2017%2F04%2F25%2FHexo-Github-Pages-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%BA%8C%EF%BC%89%2F</url>
       <content type="text"><![CDATA[这是一篇有关如何使用Hexo在Github Pages上搭建个人博客的介绍。经过了上一篇的介绍，相信大家对Hexo及如何使用Hexo创建网站应该有了一个了解。这次就来介绍下如何将Hexo搭建的博客网站发布到Github Pages上。 Github Pages介绍Github Pages本是用于介绍托管在Github上的项目，不过，Github给予每个账号一个仓库用于存放个人主页。仓库的名字必须是username/username.github.io，用户将静态的网页上传到这个仓库中，就可以通过http://username.github.io来访问存放在仓库中的网页了。需要注意的是，个人网页内容存放在master分支下。 创建仓库登陆Github，点击右上角加号选择新建仓库。如图填写仓库名，将[uername]替换成自己的Github用户名。创建成功后，将个人主页上传至此仓库便可通过http://username.github.io来访问个人主页了。 部署Hexo网站部署Hexo网站其实就是将Hexo所生成的静态网页（在public文件夹内的内容）上传到之前创建的仓库中。任何Github上传方法包括git命令行指令，Github Desktop，SourceTree等等都可以用来上传网站内容。在这里，我想着重介绍下Hexo自带提供的部署功能，非常的快捷方便。 安装插件在使用Hexo的部署功能前，需要先安装一个hexo-deployer-git插件：1npm install hexo-deployer-git --save 配置Deployment在Hexo创建的网站根目录下，打开_config.yml，作出如下修改：1234deploy: type: git repo: git@github.com:username/username.github.io.git branch: master 然后在当前目录下打开Terminal，输入：1hexo d -g 随后按照提示，分别输入自己的Github账号用户名和密码，开始上传。上传完成后就可以通过http://username.github.io来访问自己的网站了。 至此，有关Hexo和Github Pages大致的介绍就差不多了，更多有关的信息可以参见Hexo文档及Github Pages主页。]]></content>
