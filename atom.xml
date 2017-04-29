@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Jesstoria&#39;s Blog</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2017-04-25T23:19:12.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Jesse &amp; Victoria</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo-Github-Pages-搭建个人博客（二）</title>
+    <link href="http://yoursite.com/2017/04/25/Hexo-Github-Pages-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+    <id>http://yoursite.com/2017/04/25/Hexo-Github-Pages-搭建个人博客（二）/</id>
+    <published>2017-04-25T22:31:42.000Z</published>
+    <updated>2017-04-25T23:19:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>这是一篇有关如何使用<a href="https://hexo.io" target="_blank" rel="external">Hexo</a>在<a href="https://pages.github.com" target="_blank" rel="external">Github Pages</a>上搭建个人博客的介绍。<br><a id="more"></a><br>经过了<a href="https://zhicongzang.github.io/2017/04/22/Hexo-Github-Pages-搭建个人博客（一）/" target="_blank" rel="external">上一篇</a>的介绍，相信大家对Hexo及如何使用Hexo创建网站应该有了一个了解。这次就来介绍下如何将Hexo搭建的博客网站发布到<a href="https://pages.github.com" target="_blank" rel="external">Github Pages</a>上。</p>
+<h2 id="Github-Pages"><a href="#Github-Pages" class="headerlink" title="Github Pages"></a>Github Pages</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p><a href="https://pages.github.com" target="_blank" rel="external">Github Pages</a>本是用于介绍托管在Github上的项目，不过，Github给予每个账号一个仓库用于存放个人主页。仓库的名字必须是username/username.github.io，用户将静态的网页上传到这个仓库中，就可以通过<a href="http://username.github.io来访问存放在仓库中的网页了。需要注意的是，个人网页内容存放在master分支下。" target="_blank" rel="external">http://username.github.io来访问存放在仓库中的网页了。需要注意的是，个人网页内容存放在master分支下。</a></p>
+<h3 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h3><p>登陆Github，点击右上角加号选择新建仓库。<br><img src="http://ww1.sinaimg.cn/large/006tNbRwgy1fezp4u35k1j30fg05tgm5.jpg" alt="创建仓库"><br>如图填写仓库名，将[uername]替换成自己的Github用户名。<br><img src="http://ww1.sinaimg.cn/large/006tNbRwgy1fezpbkijrjj30hi02wwep.jpg" alt="仓库名"><br>创建成功后，将个人主页上传至此仓库便可通过<a href="http://username.github.io来访问个人主页了。" target="_blank" rel="external">http://username.github.io来访问个人主页了。</a></p>
+<h2 id="部署Hexo网站"><a href="#部署Hexo网站" class="headerlink" title="部署Hexo网站"></a>部署Hexo网站</h2><p>部署Hexo网站其实就是将Hexo所生成的静态网页（在public文件夹内的内容）上传到之前创建的仓库中。任何Github上传方法包括git命令行指令，<a href="https://desktop.github.com" target="_blank" rel="external">Github Desktop</a>，<a href="https://www.sourcetreeapp.com" target="_blank" rel="external">SourceTree</a>等等都可以用来上传网站内容。在这里，我想着重介绍下Hexo自带提供的部署功能，非常的快捷方便。</p>
+<h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><p>在使用Hexo的部署功能前，需要先安装一个hexo-deployer-git插件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
+<h3 id="配置Deployment"><a href="#配置Deployment" class="headerlink" title="配置Deployment"></a>配置Deployment</h3><p>在Hexo创建的网站根目录下，打开_config.yml，作出如下修改：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: git@github.com:username/username.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
+<p>然后在当前目录下打开Terminal，输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d -g</div></pre></td></tr></table></figure></p>
+<p>随后按照提示，分别输入自己的Github账号用户名和密码，开始上传。上传完成后就可以通过<a href="http://username.github.io来访问自己的网站了。" target="_blank" rel="external">http://username.github.io来访问自己的网站了。</a></p>
+<p>至此，有关Hexo和Github Pages大致的介绍就差不多了，更多有关的信息可以参见<a href="https://hexo.io/docs/index.html" target="_blank" rel="external">Hexo文档</a>及<a href="https://pages.github.com" target="_blank" rel="external">Github Pages主页</a>。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这是一篇有关如何使用&lt;a href=&quot;https://hexo.io&quot;&gt;Hexo&lt;/a&gt;在&lt;a href=&quot;https://pages.github.com&quot;&gt;Github Pages&lt;/a&gt;上搭建个人博客的介绍。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Tech" scheme="http://yoursite.com/categories/Tech/"/>
+    
+    
+      <category term="Jesse" scheme="http://yoursite.com/tags/Jesse/"/>
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+      <category term="Github" scheme="http://yoursite.com/tags/Github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Gwent昆特牌牌组分享之北方升金</title>
+    <link href="http://yoursite.com/2017/04/24/Gwent%E6%98%86%E7%89%B9%E7%89%8C%E7%89%8C%E7%BB%84%E5%88%86%E4%BA%AB%E4%B9%8B%E5%8C%97%E6%96%B9%E5%8D%87%E9%87%91/"/>
+    <id>http://yoursite.com/2017/04/24/Gwent昆特牌牌组分享之北方升金/</id>
+    <published>2017-04-24T22:36:30.000Z</published>
+    <updated>2017-04-25T18:57:25.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天渡劫成功上了R15，分享一套非常好用的上分牌组。<br><a id="more"></a></p>
+<p>先发个图纪念下</p>
+<p><img src="http://ww3.sinaimg.cn/large/006tNbRwgy1feyj7kuakfj31kw0w2u0x.jpg" alt="北方升金"></p>
+<p>闲话不多说，进入正题：</p>
+<h2 id="北方升金"><a href="#北方升金" class="headerlink" title="北方升金"></a>北方升金</h2><p><img src="http://ww4.sinaimg.cn/large/006tNbRwgy1feyjapf3esj31kw0w9x6r.jpg" alt="北方升金"></p>
+<h3 id="卡组介绍"><a href="#卡组介绍" class="headerlink" title="卡组介绍"></a>卡组介绍</h3><p>Reinforced Siege Towers加上领袖Henselt的技能（将1个战列上相邻的7张卡卡变为金卡）配合北方势力特性（金卡+2）成为了这套卡组的主要输出手段。同时金卡几乎免疫所有效果的特性使得这套卡组较为自闭。正所谓，他强任他强，清风抚山岗，他横由他横，明月照大江。只要抽牌时手气不太差，对手基本上没什么好办法来处理满场都是金卡的Henselt。</p>
+<h3 id="单卡分析"><a href="#单卡分析" class="headerlink" title="单卡分析"></a>单卡分析</h3><center><h4>Bronzes</h4></center> 
+
+<p><strong>Reinforced Trebuchet</strong>：虽然本身亏2点，但是强大的技能在拉锯战中能获得巨大的价值。需要注意的是，在计算场上点数的时候不要忘了把Reinforced Trebuchet的伤害给算在内。</p>
+<p><strong>Reinforced Siege Tower</strong>：牌组的核心牌，获胜的关键。切记把Reinforced Siege Tower一起升金了，避免受到对面效果影响。</p>
+<p><strong>Field Medic</strong>：重复利用墓地牌，保证后续回合的输出能力</p>
+<p><strong>Reaver Scout</strong>：压缩牌库的优质铜卡，多使用在Reinforced Siege Tower上。有时配合Field Medic能打出一波铺场。</p>
+<p><strong>Promote</strong>：卡组核心牌，用于升金，带两张就够了，否则容易卡手。</p>
+<p><strong>First Light</strong>：压缩牌库，防止天气效果。</p>
+<center><h4>Silvers</h4></center> 
+
+<p><strong>Roach</strong>：压缩卡组神级银卡，相当于金卡自带+3的效果。尽早的使用金卡将Roach从牌组里拉出来，以防第二三轮摸牌的时候摸到手里。</p>
+<p><strong>Priscilla</strong>：虽然选卡是一正一反，有时稳定性欠佳，但是配合Nenneke，Decoy或者Shani的多次使用能对牌库起到巨大的压缩。</p>
+<p><strong>Nenneke</strong>：复活Priscilla，King of Beggars或者Dandelion都是不错的选择。</p>
+<p><strong>King of Beggars</strong>：稳定拉出Reaver Scout或者Priscilla。</p>
+<p><strong>Decoy</strong>：对Priscilla或是King of Beggars使用，拉出压缩牌库。有时对Nenneke使用也是不错的选择。</p>
+<p><strong>Dandelion</strong>：尽可能的早下，能取得巨大收益。</p>
+<center><h4>Golds</h4></center> 
+
+<p><strong>Ciri</strong>：因为势力自带金卡+2，所以北方的Ciri比其他势力强了不是一点。配合Roach往往能赚取巨大卡差优势。不过这里更推荐带Yennefer，在这套北方升金牌组中，Yennefer的效果能达到最大化。</p>
+<p><strong>Shani</strong>：相当于复活+升金，唯一需要注意的是，被复活单位变为金卡后Decoy和Reaver Scout将无法使用。</p>
+<p><strong>Villentretenmerth</strong>：在己方几乎满场金卡的情况下，这张卡基本不会误伤己方单位。计算好回合数，连烧对面两大哥，能赚取巨大优势。同时Villentretenmerth也是其他势力对抗松鼠党大哥的唯一选择。</p>
+<p><strong>Bloody Baron</strong>：通常都选择召唤Lubberkin。Lubberkin是非常嘲讽的一张卡，对手基本都会选择在第一时间解掉Lubberkin，不然每回合+3能为己方带来巨大优势。Bloody Baron配合Roach，裸下也不会浪费任何收益。</p>
+<h3 id="卡组Combos"><a href="#卡组Combos" class="headerlink" title="卡组Combos"></a>卡组Combos</h3><p>核心：<strong>Bloody Baron</strong> -&gt; <strong>Dandelion</strong> -&gt; <strong>Reinforced Siege Tower</strong> -&gt; <strong>Reaver Scout</strong> -&gt; <strong>Promote（Henselt技能）</strong><br><strong>Field Medic</strong> -&gt; <strong>Reaver Scout</strong> -&gt; <strong>Field Medic</strong><br><strong>Priscilla</strong> -&gt; <strong>Decoy</strong> -&gt; <strong>Priscilla</strong><br><strong>King of Beggars</strong> -&gt; <strong>Decoy</strong> -&gt; <strong>King of Beggars</strong></p>
+<h3 id="技巧心得"><a href="#技巧心得" class="headerlink" title="技巧心得"></a>技巧心得</h3><center><h4>换牌阶段</h4></center>
+
+<p>留下全部的<strong>Reaver Scout</strong>，至多一张<strong>Field Medic</strong>，一张<strong>Reinforced Trebuchet</strong>和一张<strong>Promote</strong>。除非对抗Dagon，否则不要留<strong>First Light</strong>。</p>
+<center><h4>First Round</h4></center>
+
+<p>先下<strong>Bloody Baron</strong>和<strong>Dandelion</strong>（如果有的话），接着<strong>Reinforced Trebuchet</strong>。将<strong>Reaver Scout</strong>优先留给<strong>Reinforced Siege Tower</strong>。在有<strong>Promote</strong>时，不要太贪，场上有2个<strong>Reinforced Siege Tower</strong>，有机会就可以升金了。<strong>Reinforced Siege Tower</strong>和<strong>Reinforced Trebuchet</strong>可全部打出。看时机使用<strong>Field Medic</strong>复活被解单位，别把<strong>Field Medic</strong>在这局全用完，不然后两局容易后劲不足。这套牌组只要手牌不太差，第一局是非常强势的，全力争取第一轮的胜利能为之后创造出优势局面。</p>
+<center><h4>Second Round</h4></center>
+
+<p>如果赢了第一局且手里有Ciri，那将是一个大优的局面，裸下Ciri能赚取得至少1-2张卡差的优势。如果手里没有Ciri，也不要紧，保留核心Combos，打出一些无关紧要的牌，迫使对手被动出牌，往往这局对手必须确保胜利而浪费许多点数。最后一种情况，即手上没有无用牌可出，第二局空过，也是可以接受的，毕竟换取了最后一局的后手（除对抗松鼠党外）。</p>
+<p>如果第一局没有获胜，没得说，只能全力取胜。唯一需要注意的是，不要一下打出太多点数，被对手步步紧逼，导致浪费过多点数赢得这一盘。</p>
+<center><h4>Third Round</h4></center>
+
+<p>最后一盘没什么说的，全力取胜了。值得提醒的是面对松鼠党，在使用<strong>Villentretenmerth</strong>来解对方大哥时需要计算双方手牌数，从而推算出大概所剩的回合数，合理打出<strong>Villentretenmerth</strong>。只要牌差不输对方太多，基本是可以烧掉对方大哥的。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天渡劫成功上了R15，分享一套非常好用的上分牌组。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Game" scheme="http://yoursite.com/categories/Game/"/>
+    
+    
+      <category term="Jesse" scheme="http://yoursite.com/tags/Jesse/"/>
+    
+      <category term="Gwent" scheme="http://yoursite.com/tags/Gwent/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Gwent昆特牌牌组分享</title>
+    <link href="http://yoursite.com/2017/04/22/Gwent%E6%98%86%E7%89%B9%E7%89%8C%E7%89%8C%E7%BB%84%E5%88%86%E4%BA%AB%E4%B9%8B%E6%8E%A7%E5%88%B6%E6%9D%BE%E9%BC%A0/"/>
+    <id>http://yoursite.com/2017/04/22/Gwent昆特牌牌组分享之控制松鼠/</id>
+    <published>2017-04-22T18:42:43.000Z</published>
+    <updated>2017-04-23T08:27:33.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>昆特牌国际服入坑将近一个月了，排位一路飙升到3400+基本都是非常顺利的。这里分享下我常用的牌组和一些心得。<br><a id="more"></a></p>
+<h2 id="松鼠党控制牌组"><a href="#松鼠党控制牌组" class="headerlink" title="松鼠党控制牌组"></a>松鼠党控制牌组</h2><p><img src="https://ws1.sinaimg.cn/large/006NcBOugy1fewi0vgxf6j31o00yjx6r.jpg" alt="松鼠党控制牌组"></p>
+<h3 id="卡组介绍"><a href="#卡组介绍" class="headerlink" title="卡组介绍"></a>卡组介绍</h3><p>这是一套基本的控制松鼠卡组。通过松鼠党天然的技能优势赚取卡差，加上核心Combo：<strong>Toruviel</strong> -&gt; <strong>Operator</strong> -&gt; <strong>Morenn</strong>的双BUFF无解大哥一波流取得胜利。在面对各方势力时都没有什么短板。是一套非常均衡稳定的强力卡组。</p>
+<h3 id="单卡分析"><a href="#单卡分析" class="headerlink" title="单卡分析"></a>单卡分析</h3><center><h4>Bronzes</h4></center> 
+
+<p><strong>Vrihedd Dragoon</strong>：5+4非常优秀的超模铜卡，通常最理想的是用来BUFF Toruviel，但是如果手里没有Toruviel，Vrihedd Sappers也是不错的BUFF对象。<br><strong>Elven Mercenary</strong>：同样是非常优秀的铜卡，随便拉出什么法术基本上都能打出8+的超模点数，而且还能压缩卡组。需要注意的是万一拉出Scorch会不会烧掉自己的卡牌，还有就是拉出Lacerat会不会浪费了。<br><strong>Hawker Support</strong>：虽然本身亏2点，但是配合法术有着很高的成长空间。<br><strong>Vrihedd Sappers</strong>：备用BUFF对象。需要注意必须在倒数第二回合之前打出，否则牌没翻出来就尴尬了。<br><strong>Lacerate</strong>：非常好用的追点卡牌，一般在对抗怪物，松鼠和北方的时候能打出巨额伤害。<br><strong>First Light</strong>：在对抗Dagon或者群岛时可以留一张在手牌，否则在开局换牌时都换掉。这样可以配合Elven Mercenary进一步的压缩卡组。<br><strong>Alzur’s Thunder</strong>：用来解对手关键卡牌。大多数的关键卡牌都能被Alzur’s Thunder解掉。</p>
+<center><h4>Silvers</h4></center> 
+
+<p><strong>Toruviel</strong>：核心卡牌，BUFF的首选单位，尽量留到第三回合。除了Morenn和Villentretenmerth，被BUFF过的Toruviel就是一张无解的大哥。<br><strong>Roach</strong>：压缩卡组神级银卡，相当于金卡自带+3的效果。尽早的使用金卡将Roach从牌组里拉出来，以防第二三轮摸牌的时候摸到手里。配合Milva第一回合可以赚到卡差（第一回合空下Milva，拉出Roach，Roach再返回手牌，对手没牌可以返）。<br><strong>Operator</strong>：这套卡组的核心卡牌之一。当Morenn可以被打出的时候（在手中或者可以用领袖技能拉出来时）复制自己被BUFF过的牌（Vrihedd Dragoon或Elven Mercenary），再用Morenn来破坏对手获得的复制牌。在对抗松鼠党时，可以通过动画效果来定位复制牌在对方手牌中的位置。防止对方用其他牌来骗Morenn。<br><strong>Morenn</strong>：配合Operator打出Combo。需要注意的是怪物的Caretaker，在对抗怪物时尽量防止不要被对手的Caretaker从墓地里拉出Morenn。<br><strong>Yaevinn</strong>：抽卡间谍，压缩卡组，赚卡差，防Scorch。<br><strong>Scorch</strong>：在有好的时机（一烧二，一烧n的）的时候不要犹豫，有的时候犹豫了，机会就过去了。但是在对抗怪物的时候，要考虑对手Griffin，不要过早的用掉Scorch。</p>
+<center><h4>Golds</h4></center>
+
+<p><strong>Aglaïs</strong>：最强金卡之一，两次Scorch不是一般的强。当然有的时候拉Lacerate清场或者Alzur’s Thunder摧毁对手的关键卡牌也是很不错的。<br><strong>Milva</strong>：多功能卡牌，即可以用来赚卡差，又可以解对面BUFF过的大哥，还可以用来回收Vrihedd Dragoon继续BUFF大哥。<br><strong>Isengrim</strong>：最强金卡之一，配合法术，强力铺场。<br><strong>Saskia</strong>：场上有超过5个非金单位就能超模。配合Isengrim通常能打出爆炸输出。</p>
+<h3 id="卡组Combos"><a href="#卡组Combos" class="headerlink" title="卡组Combos"></a>卡组Combos</h3><p>核心：<strong>Toruviel（Vrihedd Sappers）</strong> -&gt; <strong>Operator</strong> -&gt; <strong>Morenn</strong><br><strong>Milva</strong> -&gt; <strong>Roach</strong><br><strong>Milva</strong> -&gt; <strong>对手的抽牌间谍</strong><br><strong>Hawker Support</strong> -&gt; <strong>Isengrim</strong> -&gt; <strong>Elven Mercenary（法术）</strong> -&gt; <strong>Saskia</strong></p>
+<h3 id="技巧心得"><a href="#技巧心得" class="headerlink" title="技巧心得"></a>技巧心得</h3><center><h4>换牌阶段</h4></center>
+
+<p>优先更换顺序：<strong>Roach</strong> -&gt; <strong>First Light</strong> -&gt; <strong>Vrihedd Sappers</strong> -&gt; <strong>Alzur’s Thunder</strong> -&gt; <strong>Hawker Support</strong><br>保证核心Toruviel和Vrihedd Sappers至少有一张在手中，可以将多余的换掉。<br>优先保证手中+领袖技能能打出核心combo。<br>在对抗Dagon时手牌中可以留一张<strong>First Light</strong>，其余的都可以换掉。<br>在对抗吞噬怪物或者铺场北方时，可以留<strong>Alzur’s Thunder</strong>用来解对方关键卡牌。</p>
+<center><h4>First Round</h4></center>
+
+<p>先下<strong>Hawker Support</strong>，<strong>Isengrim</strong>。用<strong>Elven Mercenary</strong>来压缩牌库成长<strong>Hawker Support</strong>，铺场。尽量取得第一局的胜利，亏不多于一张卡胜，这样在第二三局能够更好的发挥松鼠党的优势（后两局都是后手）。如果不能轻松获胜，尝试让对手亏超过一张牌放弃第一局。控制松鼠赢的就是卡差。</p>
+<center><h4>Second Round</h4></center>
+
+<p>如果赢了第一局，松鼠党的技能可以帮助你在这一场获得巨大卡差优势。对手这把必须赢下，不然游戏就结束了，但是在先手的情况下，赢下输不起的局要花费的代价可不是一般的大。这时己方用尽量小的代价消磨对方的combos和核心卡牌。同时在第二局可以下<strong>Operator</strong>复制BUFF大哥，为第三局的双大哥做下铺垫。</p>
+<p>如果第一局没有赢，因为手握后手及卡差优势的情况下，对手也不会在这局消耗过大精力。本局目标是在取胜的前提下尽量保存实力为第三局做准备。</p>
+<center><h4>Third Round</h4></center>
+
+<p>由于松鼠党的技能，第三局肯定是有后手优势的。一切顺利的话，往往还能有卡差优势。这时如果BUFF大哥是<strong>Toruviel</strong>，除了松鼠党，基本对手很少有能力处理这样的大哥。如果BUFF大哥是<strong> Vrihedd Sappers</strong>，记得在倒数第二回合及之前放下，否则来不及翻牌就麻烦了。在对抗怪物或者群岛时，留一张First Light对抗天气还是很有必要的。尽量把<strong>Aglaïs</strong>留在第三局，面对不同的局面选择拉出不同的法术获取优势。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;昆特牌国际服入坑将近一个月了，排位一路飙升到3400+基本都是非常顺利的。这里分享下我常用的牌组和一些心得。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Game" scheme="http://yoursite.com/categories/Game/"/>
+    
+    
+      <category term="Jesse" scheme="http://yoursite.com/tags/Jesse/"/>
+    
+      <category term="Gwent" scheme="http://yoursite.com/tags/Gwent/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo + Github Pages 搭建个人博客（一）</title>
+    <link href="http://yoursite.com/2017/04/22/Hexo-Github-Pages-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>http://yoursite.com/2017/04/22/Hexo-Github-Pages-搭建个人博客（一）/</id>
+    <published>2017-04-22T05:19:08.000Z</published>
+    <updated>2017-04-25T23:20:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>这是一篇有关如何使用<a href="https://hexo.io" target="_blank" rel="external">Hexo</a>在<a href="https://pages.github.com" target="_blank" rel="external">Github Pages</a>上搭建个人博客的介绍。<br><a id="more"></a><br>最近待业在家，闲来无事的时候突发奇想，想给自己弄一个网站。和老婆大人商议后决定自己动手搭建一个属于咱俩的博客，一方面可以记录一起的生活点滴，同时也可以写一些自己研究的东西。本来想自己闭门造车从后台到前端完完整整的把这一整套都弄出来的，但实在是精力有限，况且博客这个东西还是更应该将注意力放在内容上。最后，我还是决定用<a href="https://hexo.io" target="_blank" rel="external">Hexo</a>在<a href="https://pages.github.com" target="_blank" rel="external">Github Pages</a>上搭建个人博客。闲话不多说，进入正题：</p>
+<h2 id="Hexo的安装"><a href="#Hexo的安装" class="headerlink" title="Hexo的安装"></a>Hexo的安装</h2><p><a href="https://hexo.io" target="_blank" rel="external">Hexo</a>介绍：<a href="https://hexo.io" target="_blank" rel="external">Hexo</a> is a fast, simple and powerful blog framework. You write posts in <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">Markdown</a> (or other languages) and Hexo generates static files with a beautiful theme in seconds.</p>
+<p>在安装<a href="https://hexo.io" target="_blank" rel="external">Hexo</a>之前，首先得安装<a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a>及<a href="https://git-scm.com" target="_blank" rel="external">Git</a>。</p>
+<h3 id="Git的安装"><a href="#Git的安装" class="headerlink" title="Git的安装"></a>Git的安装</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">OS</th>
+<th style="text-align:center">方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Windows</td>
+<td style="text-align:center"><a href="https://git-scm.com" target="_blank" rel="external">Git</a>下载</td>
+</tr>
+<tr>
+<td style="text-align:center">Mac</td>
+<td style="text-align:center"><code>$ /usr/bin/ruby -e “$(curl -fsSL <a href="https://raw.githubusercontent.com/Homebrew/install/master/install" target="_blank" rel="external">https://raw.githubusercontent.com/Homebrew/install/master/install</a>)”</code><br>then<br><code>$ brew install git</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Linux</td>
+<td style="text-align:center"><code>$ sudo yum install git-core</code><br>or<br><code>$ sudo apt-get install git-core</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="Node-js的安装"><a href="#Node-js的安装" class="headerlink" title="Node.js的安装"></a>Node.js的安装</h3><p>除了在<a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js官网</a>下载外，还可以通过<a href="https://github.com/creationix/nvm" target="_blank" rel="external">nvm</a>来安装。</p>
+<p>cURL:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | sh</div></pre></td></tr></table></figure></p>
+<p>Wget:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ wget -qO- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | sh</div></pre></td></tr></table></figure></p>
+<p>安装完nvm后，重启Terminal运行下面的代码来安装Node.js：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ nvm install stable</div></pre></td></tr></table></figure></p>
+<h3 id="npm安装Hexo"><a href="#npm安装Hexo" class="headerlink" title="npm安装Hexo"></a>npm安装Hexo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure>
+<p>稍等片刻后，检查下Hexo有没有安装完毕：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo -v</div></pre></td></tr></table></figure></p>
+<p>结果：<br><img src="http://ww4.sinaimg.cn/large/006tNbRwgy1fevfv6403kj309m06jdgc.jpg" alt=""><br>当看到上面的内容，Hexo就安装成功了。</p>
+<h2 id="Hexo的配置及常用指令"><a href="#Hexo的配置及常用指令" class="headerlink" title="Hexo的配置及常用指令"></a>Hexo的配置及常用指令</h2><p>在Terminal中执行下面的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo init &lt;folder&gt;</div><div class="line">$ cd &lt;folder&gt;</div><div class="line">$ npm install</div></pre></td></tr></table></figure></p>
+<p>项目结构如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── _config.yml</div><div class="line">├── package.json</div><div class="line">├── scaffolds</div><div class="line">├── themes  </div><div class="line">└── source</div><div class="line">    ├── _drafts</div><div class="line">    └── _posts</div></pre></td></tr></table></figure></p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>在<code>_config.yml</code>中可以修改Hexo的大部分配置，详情见<a href="https://hexo.io/zh-tw/docs/configuration.html" target="_blank" rel="external">Hexo配置</a>。</p>
+<h3 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h3><table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>$ hexo init [folder]</code></td>
+<td style="text-align:left">新建网站</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$ hexo new [layout] &lt; title &gt;</code></td>
+<td style="text-align:left">新建文章</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$ hexo generate</code><br><code>$ hexo g</code></td>
+<td style="text-align:left">生成静态网页</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$ hexo publish [layout] &lt; filename &gt;</code></td>
+<td style="text-align:left">发布草稿</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$ hexo server</code><br><code>$ hexo s</code></td>
+<td style="text-align:left">启动本地服务器</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$ hexo deploy</code><br><code>$ hexo d</code></td>
+<td style="text-align:left">部署网站</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$ hexo migrate &lt; type &gt;</code></td>
+<td style="text-align:left">迁移网站</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$ hexo clean</code></td>
+<td style="text-align:left">清除数据及静态网页</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$ hexo render</code></td>
+<td style="text-align:left">渲染网站</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$ hexo list</code></td>
+<td style="text-align:left">资料列表</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$ hexo version</code></td>
+<td style="text-align:left">版本信息</td>
+</tr>
+</tbody>
+</table>
+<p>至此，有关Hexo大致的介绍就差不多了，更多有关Hexo的信息可以参见<a href="https://hexo.io/docs/index.html" target="_blank" rel="external">Hexo文档</a>。</p>
+<p><a href="https://zhicongzang.github.io/2017/04/25/Hexo-Github-Pages-搭建个人博客（二）/" target="_blank" rel="external">下一篇</a>将介绍如何将网站部署到Github Pages。</p>
+<hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这是一篇有关如何使用&lt;a href=&quot;https://hexo.io&quot;&gt;Hexo&lt;/a&gt;在&lt;a href=&quot;https://pages.github.com&quot;&gt;Github Pages&lt;/a&gt;上搭建个人博客的介绍。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Tech" scheme="http://yoursite.com/categories/Tech/"/>
+    
+    
+      <category term="Jesse" scheme="http://yoursite.com/tags/Jesse/"/>
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+      <category term="Github" scheme="http://yoursite.com/tags/Github/"/>
+    
+  </entry>
+  
+</feed>
